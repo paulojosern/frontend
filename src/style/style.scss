@@ -1,0 +1,20 @@
+@import 'core/variables.scss';
+@import 'core/reset.scss';
+@import 'core/mixins.scss';
+//
+@import 'base/containers.scss';
+//
+@import 'partials/elements.scss';
+@import 'partials/footer.scss';
+@import 'partials/header.scss';
+@import 'partials/login.scss';
+@import 'partials/modal.scss';
+//
+@import 'modules/faq.scss';
+@import 'modules/profissional.scss';
+@import 'modules/services.scss';
+//
+@import 'layout/schedule.scss';
+@import 'layout/animate.scss';
+@import 'layout/main.scss';
+@import 'layout/account.scss';

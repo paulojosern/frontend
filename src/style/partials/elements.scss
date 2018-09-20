@@ -1,0 +1,109 @@
+
+.subtitle , .link, .description{
+  @include fontSite(txt-default,1em,wregular);
+}
+.title_main{
+  @include fontSite(titles,1.525em,wbold);
+  @extend .title_default;
+}
+.title_banner{
+  @include fontSite(txt-default,2.325em,wsemibold);
+  text-transform: uppercase;
+}
+.subtitle_banner{
+  @include fontSite(txt-default,1.525em,wthin);
+  text-transform: uppercase;
+}
+.select-default{
+  appearance: none;
+  border-radius: 0;
+  border-bottom: 1px solid #bbbbbb;
+  color: #bbbbbb;
+  font-size: 1em;
+  padding: 5px 0;
+  width: 100%;
+}
+//FORM////////////////
+.forms {
+  position: relative;
+  padding: 0;
+  margin: 10px 0;
+  padding-top: 15px;
+  .label-form {
+      display: block;
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: transparent;
+      font-size: 1.1em;
+      color: $scolor-darkblack;
+      span {
+          transition: all .3s ease;
+          margin: 0;
+          position: absolute;
+          bottom: 12px;
+          display: block;
+          width: 100%;
+          text-align: left;
+      }
+      .bd {
+          position: absolute;
+          transition: all .3s ease;
+          width: 10%;
+          height: 2px;
+          left: 0;
+          bottom: 0px;
+          background: $pcolor-pink;      
+      }
+  }
+  .input-text:focus + label,
+  .input-text:valid + label{
+      transition: all .3s ease;
+      width: 100%;
+      color: $scolor-darkblack;
+      z-index: 2;
+      .bd {
+          transition: all .3s ease;
+          width: 100%;
+      }
+      span {
+          transition: all .3s ease;
+          top: 0;
+          font-size: .8em;
+      }
+  }
+  
+  .input-text:valid + .bd,
+  .input-text:valid + .bd{
+      transition: width .5s ease;
+      width: 100%;
+      z-index: 3;
+  }        
+}
+input{
+  &[type=text],
+  &[type=password]{
+    @include fontSite(txt,1em,wregular);
+    width: 100%;
+  }
+  margin: 3px;
+  border: 1px solid $scolor-darkgray;
+  padding: 8px 12px;
+}
+.input-text,
+textarea {
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid $scolor-darkgray;
+        width: 100%;
+        padding: 10px 0px;
+        margin: 0;
+        @include fontSite(txt,1em,wregular);
+        color: $scolor-darkgray;
+        font-weight: 400;
+        position: relative;
+        font-size: 1.2em;
+        background:transparent;
+        border-radius: 0; 
+    }

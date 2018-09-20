@@ -1,0 +1,101 @@
+.banner-services{
+  padding: 120px 0 30px;
+}
+.services-filter{
+  text-align: center;
+  .services-form{
+    display: block; 
+    > .field{   
+      display: inline-block;
+      width: 100%;
+      @media (min-width:768px) {
+        width: 600px;
+        margin-right: 15px;
+        
+      }
+      > .input-form{
+        border: 0;
+        border-bottom: 1px solid #bbbbbb;
+        @include fontSite(txt,1.2em,wsemibold);
+        padding: 8px 12px 8px 0;
+        width: 100%;
+        transition: all .3s ease;
+        &:focus{
+          transition: all .3s ease;
+          border-bottom: 1px solid $pcolor-pink;
+        }
+      }
+    }
+    > .btn{
+      color: $pcolor-lightpurple;
+      margin: 20px auto;
+      @include btnSite(transparent,$pcolor-lightpurple);
+      vertical-align: middle;
+      display: inline-block;
+      width: 90%;
+      @media (min-width:768px) {
+        width: auto;
+      }
+    }
+  }
+}
+.services-box{
+  margin: 50px 0;
+}
+.services-box .service-item{
+  align-items: center;
+  box-shadow: 2px 6px 20px -2px #E0DEDE;
+  color: $scolor-darkgray;
+  display: block;
+  margin: 0;
+  padding: 30px;
+  @media (min-width:768px){
+    display: flex;
+    justify-content: space-between;
+  }
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  & .service-item-details{
+      max-width: 680px;
+    > .title{
+      @include fontSite(txt,1.2em,wsemibold);
+    }
+    > .time{
+      position: relative;
+      padding-left: 20px;
+      @include fontSite(titles,0.725em,wsemibold);
+      &:before{
+        content: url(/images/icons/clock.png);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    > .text{
+      @include fontSite(txt,1em,wlight);
+        margin: 10px 0;
+    }
+  }  
+  & .service-item-price{
+    margin: 25px auto 10px;
+    width: 100px;
+    @media (min-width:768px){
+      margin: 0;
+    }
+    > .price{
+      @include fontSite(titles,1.2em,wregular);
+      > span{
+        font-size: 2em;
+        font-weight: bold;
+      }
+    }
+    > .btn{
+      > a{color:inherit;}
+    }
+  }
+}

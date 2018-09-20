@@ -1,0 +1,530 @@
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+    display: block;
+        ////////////////////////////////// CONTAINER
+    .container-header{  
+        height: 100%;
+        width: 100%;
+        padding:0;
+        ////////////////////////////LOGO
+        .brand{
+            top: 15px;
+            left: 0;
+            width: 200px;
+            height: 45px;
+            position: relative;
+            cursor: pointer;
+            z-index: 10;
+            svg{
+                fill: white;
+                width: 200px;
+                height: 45px;
+                cursor: pointer;
+            }
+            @media (min-width:900px) {
+                left: 2vw;
+                @include centerv();
+            }
+        }
+        ///////////////////////////////// BOTÃO ENTRAR
+        .btn-login{
+            border: 2px solid white;
+            color: white;
+            display: none;
+            z-index: 9;
+            transition: .4s ease-in;
+            @media (min-width:900px) {
+                display: inline-block;
+                @include centerv();  
+                right: 5vw;
+                @include fontSite(titles,1.1em,wsemibold);
+            }
+            &:hover{
+                background: white;
+                color: $pcolor-pink;
+            }
+        }
+        //////////////// MENU ACCOUNT (LOGADO)
+        .label-menu-account{
+            display: block;
+            width: 90%;
+            margin: 30px auto 0;
+            position: relative ;
+            border: 0; 
+            text-align: center;
+            @include fontSite(titles,1.35em,wregular);
+            padding-bottom: 5px;
+            border-top: 1px solid white;
+            border-radius: 0;
+            .arrow-menu{
+                transition: all .1s ease-out;
+                width: 16px;
+                height: 15px;
+                position: absolute;
+                right: 15px;
+                top: 12px;
+                &::before,
+                &::after{
+                width: 10px;
+                height: 2.5px;
+                background: white;
+                border-radius: 6px;
+                content: '';
+                position: absolute;
+                top: 5px; 
+                }
+                &::before {
+                    transform: rotate(45deg);
+                    left: 0;
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                    right: 0;
+                }
+            }
+            &:hover {
+                background: transparent;
+                height: auto;
+                .arrow-menu{
+                    &::before,
+                    &::after{
+                        background: white;
+                    }
+                    &::before {
+                        transform: rotate(-45deg);
+                        left: 0;
+                    }
+                    &::after {
+                        transform: rotate(45deg);
+                        right: 0;
+                    }
+                }
+            }
+            .menu-account{
+                display: block;
+                position: relative;
+                margin-top: 20px;
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                background: transparent;
+                li {
+                    display: block;
+                    border-top: 0.2px solid white;
+                    text-align: center;
+                    a {
+                        color: white;
+                        padding: 10px 20px;
+                        display: block;
+                        text-decoration: none;
+                        @include fontSite(titles,0.85em,wregular);
+                    }
+                } 
+            }
+            &:hover{
+                color: white;
+                .menu-account{
+                    transition: all .3s ease;
+                    opacity: 1;
+                    visibility: visible;
+                    height: auto;
+                }
+            }
+            @media (min-width:900px){  
+                padding-right: 40px;
+                position: relative;
+                width: auto;
+                margin: 0;
+                display: inline-block;
+                border: 1.5px solid white;
+                @include centerv();  
+                right: 5vw;
+                @include fontSite(titles,1em,wsemibold);
+                padding-bottom: 10px;
+                border-radius: 10em;
+                /////SUB MENU - ACCOUNT
+                .menu-account{
+                    position: absolute;
+                    background: white;
+                    top: 47px;
+                    right:0;
+                    z-index: 9999;
+                    border-radius: 3px;
+                    transition: all .3s ease;
+                    box-shadow: 0 1px 8px #ccc;
+                    height: auto;
+                    li {
+                        display: block;
+                        border-bottom: 1px solid #ccc;
+                        text-align: center;
+                        border-top: 0px;
+                        a {
+                            color:$scolor-darkblack;
+                            padding: 10px 20px;
+                            display: block;
+                            text-decoration: none;
+                            @include fontSite(titles,0.85em,wregular);
+                            }
+                            &:nth-child(3){
+                            border: 0;
+                        }
+                    } 
+                }
+            }
+        }
+        /////////////////////////////////// MENU (PÚBLICO)
+        input#label-login{
+            display: none;
+            &:checked ~ .menu {
+                opacity: 1;
+                visibility: visible;
+                z-index: 5;
+            }
+            &:checked ~ .label-login{       
+                .icon-hamburguer{
+                    background: rgba(255,255,255,0);
+                    &:before{transform: rotate(45deg);top: 0;}
+                    &:after{transform: rotate(135deg);top: 0;}
+                }
+            }
+            &:checked ~ .label-menu-account{
+                display: none;
+            }
+        }
+        nav.menu{
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-out;
+            width: 100vw;
+            height: 100vh;
+            background: $pcolor-lightpurple;
+            padding: 0;
+            margin: 0;
+            a {
+                text-decoration: none;
+            }
+            @media (min-width:900px) {
+                opacity: 1;
+                visibility: visible;
+                position: absolute;
+                width: 100%;
+                height: 100%; 
+                background: transparent;
+            }
+            ul.menu-navegation{
+                @include centerv();
+                width: 100%;
+                left: 0;
+                @media (min-width:900px){
+                    text-align: right;
+                    height: auto;
+                    display: block;
+                }
+                li.item {
+                    padding: 10px 30px;
+                    display: block;
+                    height: auto;
+                    @media (min-width:900px) {
+                        display: inline-block;
+                        padding: 0;
+                        &:last-child{
+                            margin-right: 280px;
+                        }
+                    }
+                    a{
+                        color: white;
+                        text-align: center;
+                        display: block;
+                        @include fontSite(titles,1.6em,wsemibold); 
+                        padding: 15px;
+                        margin: 0;
+                        border-radius: 10em;   
+                        position: relative;   
+                        @media (min-width:900px) {
+                            @include fontSite(titles,1em,wregular); 
+                        }
+                        .icon-arrow{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 12px;
+                            position: relative;
+                            margin-left: 8px;
+                            &:after , &:before{
+                                background: white;
+                                border-radius: 6px;
+                                content: '';
+                                position: absolute;
+                                right: 0;
+                                top: -2px;
+                                height: 1.5px;
+                                width: 8px;
+                                transition: top .5s;
+                                transition: transform .5s;
+                                transform: rotate(-45deg);
+                            }    
+                            &:before {
+                                transform: rotate(45deg);
+                                right: 5px;
+                            }
+                        }      
+                    }
+                    
+                }
+                ///////////////////////////// SUBMENU
+                .servicos{
+                    cursor: pointer;
+                    #dropdown {                       
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .1s ease-out;
+                        height: 0;
+                        a.menu-link-dropdown{
+                          color:  white;
+                          display: block;
+                          svg {
+                              width:55px;
+                              height: 35px;
+                              display: inline-block;
+                              vertical-align: middle;
+                              fill:white;
+                          }
+                        }
+                        @media (min-width:900px) {
+                            position: absolute;
+                            left: 0;
+                            top: 25px;
+                            text-align: center;
+                            padding: 20px; 
+
+                            a.menu-link-dropdown{
+                                color: $pcolor-pink;
+                                display: inline-block;
+                                border-radius: 0; 
+                                padding: 12px 20px;
+                                _border-right: 0.5px solid  rgba($pcolor-pink, .5);
+                                svg {
+                                    fill:  $pcolor-lightpurple;
+                                }
+                            }
+                        }
+                    }                   
+                    &:hover{
+                        #dropdown { 
+                            opacity: 1;
+                            visibility: visible;
+                            transition: all .2s ease-in;   
+                            height: auto;
+                        }                     
+                        @media (min-width:900px) { 
+                            #dropdown{
+                                background:white;                                
+                                top: 45px;
+                                box-shadow: 0px 4px 5px rgba(#000, .1);
+                            }
+                            .icon-arrow{
+                                transition: all .2s ease-out;
+                                top: -2px; 
+                                transform: rotate(180deg);                           
+                            }
+                        }
+                    }
+                }    
+            }
+        }
+        //icon
+        .label-login{
+            height: 30px;
+            right: 25px;
+            width: 30px;
+            @include centerv();
+            cursor: pointer;
+            z-index: 15;
+            outline: 0;
+            top: 50px;
+            & > .icon-hamburguer{
+                background: white;
+                display: block;
+                border-radius: 6px;
+                position: absolute;
+                right: 0;
+                top: 5px;
+                height: 4px;
+                width: 30px;
+                z-index: 99999;
+                transition: background .3s ease-out;
+                &.active{
+                    background: rgba(255,255,255,0);
+                    position: fixed;
+                    right: 0px;
+                }
+                &:after , &:before{
+                    background: white;
+                    border-radius: 6px;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    height: 4px;
+                    width: 30px;
+                    transition: top .5s;
+                    transition: transform .5s;
+                }
+                &:before{top: -12px;}
+                &:after{top: 12px;}
+                &.active:before{transform: rotate(45deg);top: 0;}
+                &.active:after{transform: rotate(135deg);top: 0;}
+            }
+            @media (min-width:900px) {
+                display: none;
+            }
+        }
+        @media (min-width:900px) {
+            height: 100px;
+        }
+    }
+    @media (min-width:900px) {
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        background: transparent;
+        &:hover{
+            background: white;
+            transition: all .2s ease;
+            .container-header{
+                .brand{
+                    svg{
+                        fill: $pcolor-lightpurple;
+                    }
+                }
+                .btn-login{
+                    @media (min-width:900px) {
+                        border: 2px solid $pcolor-lightpurple;
+                        color: $pcolor-lightpurple;
+                    }
+                    &:hover{
+                        background: $pcolor-lightpurple;
+                        color: white;
+                    }
+                }
+                .label-menu-account{
+                    .arrow-menu{
+                        &::before,
+                        &::after{
+                        background: $pcolor-lightpurple !important;
+                        }
+                    }
+                    &:hover{
+                        .arrow-menu{
+                            &::before,
+                            &::after{
+                            background: white !important;
+                            }
+                        }
+                    }
+                }
+                .menu{
+                    ul.menu-navegation{
+                        .item{
+                            a{
+                                color:  $pcolor-lightpurple;
+                                .icon-arrow{
+                                    &:after {
+                                        transform: rotate(-45deg);
+                                        background: $pcolor-lightpurple;
+                                    }    
+                                    &:before {
+                                        transform: rotate(45deg);
+                                        background: $pcolor-lightpurple;
+                                        right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width:900px){
+    header.fixed{
+        position: fixed !important;
+        background: white;
+        transition: all .2s ease;
+        border-bottom: 1px solid rgba($pcolor-lightpurple, .2);
+        z-index: 15;
+        .container-header{
+            .brand{
+                svg{
+                    fill: $pcolor-lightpurple;
+                }
+            }
+            .btn-login{
+                @media (min-width:900px) {
+                    border: 2px solid $pcolor-lightpurple;
+                    color: $pcolor-lightpurple;
+                }
+                &:hover{
+                    background: $pcolor-lightpurple;
+                    color: white;
+                }
+            }
+            //////////////// MENU ACCOUNT (LOGADO)
+            .label-menu-account{
+                .arrow-menu{
+                    &::before,
+                    &::after{
+                    background: $pcolor-pink !important;
+                    }
+                }
+                &:hover {
+                    .arrow-menu{
+                        &::before,
+                        &::after{
+                            background:white !important;
+                        }
+                    }
+                    .menu-account{
+                        transition: all .3s ease;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                @media (min-width:900px) {
+                    display: inline-block;
+                    @include centerv();  
+                    right: 5vw;
+                    @include fontSite(titles,1.1em,wsemibold);
+                }
+            }
+            .menu{
+                ul.menu-navegation{
+                    .item{
+                        a{
+                            color:  $pcolor-lightpurple;
+                            .icon-arrow{
+                                &:after {
+                                    transform: rotate(-45deg);
+                                    background: $pcolor-lightpurple;
+                                }    
+                                &:before {
+                                    transform: rotate(45deg);
+                                    background: $pcolor-lightpurple;
+                                    right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

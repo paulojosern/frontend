@@ -1,0 +1,84 @@
+.foo{
+  padding: 25px 0;
+  width: 100%;
+  z-index: 0;
+  @media (min-width:900px){
+    padding: 0;
+    display: block;
+    padding: 70px 0;
+  }
+}
+.container{
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 90%;
+}
+.wrapper-foo{
+  padding: 70px 0;
+}
+.wrapper-flex{
+  display: block;
+  @media (min-width:900px) {
+    display: flex;
+    flex-wrap: wrap;
+    > .clearflex{
+      flex: 0 0 100%;
+    }
+  }
+}
+.banner_default{
+  background: linear-gradient(to right,rgba(152,6,110,1) ,rgba(31,13,85,1));
+  margin: 0 auto;
+  padding: 50px 0;
+  .main-banner{
+    text-align: center; 
+  }
+  @media (min-width:900px) {
+    padding: 0;
+    display: block;
+  }
+}
+.hidden-lg{
+  @media (min-width:900px) {
+    display: none !important;
+  }
+}
+.main-banner{
+  margin: 20px auto;
+  padding: 0;
+  > .title_banner{
+    color: white;
+    font-weight: 100;
+     &:after{display: none;
+    }
+  }
+  > .subtitle_banner{
+    color: white;
+  }
+  @media (min-width:900px) {
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    .container{
+      @include center()
+    }
+    
+  }
+}
+.main-services{
+  background: linear-gradient(to right, rgba($scolor-darkgold,.4),rgba(254, 254, 254, .9)),url(/images/backgrounds/banner-makeup.jpg);
+  background-position: center;
+  background-size: cover;
+  .title_default,
+  .subtitle_default{
+    color: $scolor-darkgray;
+  }
+}
+.services-box{
+  background: white;
+  border-radius: 6px;
+  box-shadow: 2px 6px 20px -2px #888888;
+}
+.banner_duvidas , .banner_profissional{
+  padding: 160px 0 60px;
+}

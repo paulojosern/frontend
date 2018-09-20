@@ -1,0 +1,94 @@
+.wrapper-schedule{
+  background: rgba($scolor-lightgray,.1);
+}
+.wrapper-header-schedule{
+  display: block;
+  padding: 20px;
+}
+.wrapper-schedule-content{
+  margin: 20px 0 0;
+  padding: 20px 0 60px;
+}
+.schedule-item.schedule-header{
+  > .title{
+    @include fontSite(titles,1.6em,wregular);
+    > span{
+      color: $pcolor-lightpurple;
+    }
+  }
+}
+.schedule-item{
+  background: white;
+  color: #ccc;
+  margin: 20px 0 0;
+  padding: 30px;
+}
+.schedule-item:nth-child(2){
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  > .option{
+    background: white;
+    margin: 20px 0;
+    padding: 30px;
+    &:nth-child(1){
+      width: 60%;
+    }
+    span{display: block;}
+    > .title{
+      color: $scolor-darkgray;
+      margin: 10px 0;
+      @include fontSite(titles,1.4em,wregular);
+    }
+    input{border: 0;}
+  }
+}
+.schedule-body .content-schedule{
+  display: flex;
+  > .register-address{
+    padding-right: 20px;
+    width: 50%; 
+    .form-field:nth-child(6){
+      margin: 10px 10px 10px 0;
+      width: 98%;
+    }
+    .about-address{
+      float: left;
+      margin: 20px 0 0;
+      @include fontSite(txt,.775em,wregular);
+    }
+    .btn{
+      float: right;
+      margin: 20px 0 0;
+    }
+  }
+  > .registered-address{
+    border-left: 1px solid #999;
+    width: 50%;
+    @media (min-width: 820px){
+      padding-left: 30px;
+    }
+  }
+  > .registered-address .flex-address{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    > .address{width: 45%;}
+  }
+}
+
+.schedule-footer .content-schedule{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  > .warn-schedule{
+    max-width: 500px;
+    @include fontSite(txt,.9em,wregular);
+  }
+  > .confirm-schedule{
+    background: $pcolor-pink;
+    color: white;
+    a{color: inherit;}
+  }
+}

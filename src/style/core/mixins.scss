@@ -1,0 +1,104 @@
+// --------------------------------------------------
+// Font Family
+// --------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,700|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i');
+
+
+@mixin fontSite($family,$size,$weight){
+  font-size: $size;
+  font-weight: $weight;
+
+  @if $family == titles{
+    font-family: 'Cabin', sans-serif;
+  }
+  @if $family == txt{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  @if ($weight == wbold){
+    font-weight: 700;
+  }
+  @if ($weight == wsemibold){
+    font-weight: 600;
+  }
+  @if ($weight == wregular){
+    font-weight: 400;
+  }
+  @if ($weight == wlight){
+    font-weight: 300;
+  }
+  @if ($weight == wthin){
+    font-weight: 100;
+  }
+}
+
+@mixin btnSite($bg,$border,$padding:null){
+  @if ($padding == null){
+    padding: 8px 20px;
+  }
+  background: $bg;
+  border: 1px solid $border;
+  padding: $padding;
+}
+
+// --------------------------------------------------
+// Placeholders
+// --------------------------------------------------
+
+.title_default{
+  color: $scolor-darkgray;
+  position: relative;
+  text-align: center;
+  @include fontSite(titles,2.2em,wbold);
+  &:after{
+    background: $scolor-darkgold;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 100px/2);
+    height: 4px;
+    width: 100px;
+  }
+}
+.subtitle_default{
+  color: $scolor-darkgold;
+  margin: 20px 0;
+  text-align: center;
+  @include fontSite(txt,1.1em,wsemibold);
+}
+
+.btn{
+  display: block;
+  border-radius: 10em;
+  border: 1.5px solid $pcolor-pink;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: $pcolor-pink;
+  @include fontSite(titles,1em,wsemibold);
+  transition: all .3s ease-out;
+  &:hover{
+    transition: all .3s ease-in;
+    color: white;
+    background: $pcolor-pink;
+  }
+}
+@mixin center(){
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) 
+  }
+@mixin centerv(){
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) 
+  }
+@mixin full(){
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}

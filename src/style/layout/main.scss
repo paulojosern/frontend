@@ -1,0 +1,322 @@
+.banner{
+	background: linear-gradient(to right,rgba(152,6,110,.8) ,rgba(31,13,85,.8)), url(/images/backgrounds/banner-main.jpg);
+	background-position: center,center;
+	background-size: cover;
+	@media (min-width:900px){
+		height: 100vh;
+		display: block;
+		position: relative;
+	}
+}
+
+.featured{
+	> .title_banner{
+		color: white;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: initial;
+		> span{
+		color: $pcolor-lightpink;
+		}
+		&:after{
+		display: none;
+		}
+	}
+	@media (min-width:700px) {
+		> .title_banner{
+		font-size: 3em;
+		}
+	}
+}
+.banner-schedule{
+	background: white;
+	border-radius: 0.225em;
+	margin: 20px auto;
+	max-width: 1024px;
+	padding: 30px 20px;
+	position: relative;
+	> .title{
+		color: $scolor-lightgray;
+		text-align: center;
+		@include fontSite(titles,1.6em,wsemibold);
+	}
+	> .schedule-form{
+		margin: 0 auto;
+		max-width: 1024px;
+		// @media (min-width:900px){display: flex;}
+		> .btn{
+		@include btnSite($pcolor-lightpurple,transparent);
+		color: white;
+		display: inline-block;
+		margin: 30px auto;
+		}
+	}
+	&:after{
+		content: url(/images/assets/arrow_down.png);
+		position: absolute;
+		left: calc(50% - 32px/2);
+		animation: arr-down .9s infinite ease-out;
+	}
+	@media (min-width:900px) {
+		margin: 50px auto;
+
+	}
+}
+.schedule-form .field{
+	display: inline-block;
+	margin: 60px 20px 0;
+	padding: 0 20px;
+	position: relative;
+	width: 240px;
+	&:nth-child(2){
+		@media (min-width: 960px){
+		border-left: 1px solid #bbbbbb;
+		border-right: 1px solid #bbbbbb;
+		}
+	}
+	&:after{
+		content: url(/images/assets/arrow_down-mini.png);
+		position: absolute;
+		bottom: 12px;
+		right: 30px;
+		width: 10px;
+		height: 10px;
+	}
+	& .select-default{
+		appearance: none;
+		border-radius: 0;
+		border-bottom: 1px solid #bbbbbb;
+		color: #bbbbbb;
+		font-size: 1em;
+		padding: 5px 0;
+		width: 100%;
+	}
+}
+// COMO FUNCIONA
+.how_it_works{
+	background: white;
+	justify-content: space-between;
+	z-index: 2;
+	.flexchild{
+		color: $scolor-darkgray;
+		margin: 40px auto;
+		max-width: 230px;
+		height: 200px;
+		padding-top: 130px;
+		position: relative;
+		text-align: center;
+		&:before{content: '';position: absolute;top: 0;left: calc(50% - 140px/2);width: 140px;}
+		&.calendar:before{content: url(/images/icons/calendar.png);} 
+		&.location:before{content: url(/images/icons/location.png);} 
+		&.professional:before{content: url(/images/icons/professional.png);} 
+		&.price:before{content: url(/images/icons/price-tag.png);}
+		> .title{@include fontSite(titles,1.125em,wsemibold);}
+		> .description{@include fontSite(txt,0.9em,wlight);margin: 15px 0;}
+	}
+}
+
+
+// SLIDER CONFIGS
+.slider-services{
+	background: linear-gradient(to right, rgba($scolor-darkgold,.4),rgba(254, 254, 254, .9)),url(/images/backgrounds/banner-makeup.jpg);
+	background-position: center;
+	background-size: cover;
+	.title_default,
+	.subtitle_default{
+	  color: $scolor-darkgray;
+	}
+	.slider-content{
+		margin: 0 auto;
+		padding: 30px 30px;
+		position: relative;
+		@media (min-width:900px) {
+			padding: 30px 70px;
+		}
+		.item{
+			padding:0  10px;
+			height: 430px;
+			article{
+				background: white;
+				
+				transition: opacity .4s ease-in-out;
+				display: inline-block;
+				border-radius: 6px;
+				margin: 0px;
+				cursor: pointer;
+				outline: 0;
+				height: 430px;
+				//border: 2px solid #000;
+				> .service-image{
+					background: $pcolor-pink;
+					clip-path: polygon(0 0,100% 0%,100% 100%, 0 70%);
+					height: 180px;
+					border-radius: 6px;
+					> picture img{
+						width: 100%;
+						border-radius: 6px;
+					}
+					
+				}
+				> .service-details{
+					color: $scolor-darkgray;
+					margin: 0 auto;
+					margin-top: -20px;
+					padding: 20px;
+					position: relative;
+					height: 270px;
+					> .title{margin:10px 0;@include fontSite(txt,1.2em,wsemibold);}
+					> .subtitle{
+						@include fontSite(txt,0.9em,wregular);
+						span{
+							font-size: 2em;
+							font-weight: 800;
+						}
+					}
+					> .description{
+						@include fontSite(txt,1em,wregular);
+					}
+					> .btn{
+						color: $pcolor-lightpurple;
+						margin: 15px auto;
+						@include btnSite(white,$pcolor-lightpurple);
+						position: absolute;
+						bottom: 10px;
+						right: 20px;
+						> a{color: inherit;}
+					} 
+				} 
+			}
+		}
+		.slick-prev,
+		.slick-next{
+			height: 20px;
+			width: 20px;
+			border: 0;
+			z-index: 3;
+			background: transparent;
+			cursor: pointer;
+			outline: 0;
+			&::before,
+			&::after{
+				content: '';
+				width: 25px;
+				height: 8px;
+				border-radius: 12px;
+				background: white;
+				position: absolute;
+				transform: rotate(-50deg);
+				top:-2px;
+			}
+			&::after{
+				transform: rotate(50deg);
+				top:12px;
+			}
+			&:hover{
+				&::before,
+				&::after{
+					background:$pcolor-lightpurple;
+				}
+			}
+		}
+		.slick-prev{
+			left: 100%;
+			&::before,
+			&::after{
+				content: '';
+				transform: rotate(50deg);
+				top:-2px;
+			}
+			&::after{
+				transform: rotate(-50deg);
+				top:12px;
+			}
+		}
+		.slick-next{
+			left:-40px;
+		}
+	}
+  }
+// SLIDER ITENS
+.wrapper-slider .item-slider{
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	height: 440px;
+	width: 250px !important;
+	z-index: 2;
+	> .service-image{
+		background: $pcolor-pink;
+		clip-path: polygon(0 0,100% 0%,100% 100%, 0 70%);
+		height: 260px;
+		> picture img{
+		width: 130%;
+		}
+	}
+	> .service-details{
+		color: $scolor-darkgray;
+		margin: 0 auto;
+		margin-top: -40px;
+		width: 250px;
+		> .title{margin:10px 0;@include fontSite(txt,1.625em,wsemibold);}
+		> .subtitle{
+			@include fontSite(txt,0.9em,wregular);
+			span{
+				font-size: 2em;
+				font-weight: 800;
+			}
+		}
+		> .description{
+		@include fontSite(txt,1em,wregular);
+		}
+		> .btn{
+			color: $pcolor-lightpurple;
+			margin: 15px auto;
+			@include btnSite(white,$pcolor-lightpurple);
+			> a{color: inherit;}
+		}
+	}
+	@media (min-width: 960px){
+		margin: 28px;
+		height: 440px;
+		width: 250px !important;
+	}
+}
+// DEPOIMENTOS
+.depositions{
+	color: $scolor-darkgold;
+	justify-content: space-between;
+	text-align: center;
+	& .item{
+		margin: 120px auto;
+		position: relative;
+		width: 280px;
+		&:before{
+		content: '\201C';
+		color: $scolor-darkgold;
+		position: absolute;
+		top: -100px;
+		left: calc(50% - 42px/2);
+		@include fontSite(txt,5em,wbold);
+		}
+		> .profile-img{
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto;
+		overflow: hidden;
+		height: 150px;
+		width: 150px;
+		img{width: 100%;}
+		}
+		> .description{
+		@include fontSite(txt,1em,wthin);
+		font-style: italic;
+		margin: 30px 0;
+		padding: 10px 0;
+		}
+		> .author{
+		color: $scolor-darkgold;
+		@include fontSite(txt,0.925em,wsemibold);
+		}
+		> .author span{font-weight: 400;}
+	}
+}

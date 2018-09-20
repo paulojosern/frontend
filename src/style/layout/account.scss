@@ -1,0 +1,375 @@
+.bg-account{
+    @media (max-width:900px) {
+        header{
+            background: linear-gradient(to left,rgba(152, 6, 110,.9),rgba(152, 6, 110,.9)  ,rgba(152, 6, 110,1) 75%),url(/images/backgrounds/footer-pattern.png);
+            position: relative !important;
+            padding-bottom: 0;
+        }
+    }
+}
+.tabs {
+    width: 100%;  
+    list-style: none;
+    position: relative;
+    text-align: left;
+    background: white;
+    height: 50px;
+    
+    li {
+        display: block;  
+        margin: 0;
+        padding: 0; 
+        float: left;
+        width: 40%;
+        outline: 0;
+        input[type="radio"] {
+            display: none;
+        }
+        &:nth-child(2) {
+            width: 60%;
+        }
+        @media (min-width:900px) {
+            width: auto; 
+            &:nth-child(2) {
+                width: auto; 
+    
+            }
+        }
+        label {
+            display: block;
+            padding: 15px 0;
+            @include fontSite(titles,1em,wregular);
+            letter-spacing: 0.5px;
+            background: $scolor-darkgold;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            height: 50px; 
+            transition:all 0.2s ease-in-out;
+            color: white;
+            outline: 0;
+            &:hover {
+                background: darken($pcolor-pink, 10);
+            }
+            @media (min-width:900px) {
+                padding: 15px 30px;
+                display: inline-block;
+            }
+        }     
+    }
+    .tabs-content{
+        z-index: 2;
+        display: none; 
+        overflow: hidden;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0; 
+        color: $scolor-darkblack;
+        @include fontSite(txt,.9em,wregular);
+    }
+    //The Magic
+    [id^="tab"]:checked + label { 
+        background: $pcolor-pink; 
+    }
+    [id^="tab"]:checked ~ [id^="tab-content"] {
+        display: block;
+    }
+}
+//--------------------------------------
+//ACORDEON
+//--------------------------------------
+ul.tab{
+    position: relative;
+    height: 500px;
+    
+    li {
+        width: 100%;
+        color:  white;
+        overflow: hidden;
+        background: white;
+        .tab-input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        .label-tab {
+            display: block;
+            line-height: 3;
+            cursor: pointer;
+            color: $scolor-darkblack !important;
+            background: white !important;
+            padding: 0 !important;
+            border-top: 1px solid rgba($scolor-darkblack, 0.15); 
+            width: 100%;    
+            @include fontSite(titles,1.15em,wregular);  
+            @media (min-width:900px){
+                position: absolute;
+                width: 280px;
+                height: 50px;
+                top: 0;
+                left: 0;
+            }           
+        }
+        @media (min-width:900px){
+            background:transparent;
+            &:nth-child(1){
+                .label-tab {
+                    top: 0px;
+                    border: 0;
+                }  
+            }  
+            &:nth-child(2){
+                .label-tab {
+                    top: 50px;
+                }  
+            } 
+            &:nth-child(3){
+                .label-tab {
+                    top: 100px;
+                }  
+            } 
+            &:nth-child(4){
+                .label-tab {
+                    top: 150px;
+                }  
+            } 
+            &:nth-child(5){
+                .label-tab {
+                    top: 200px;
+                }  
+            } 
+        }
+        .tab-content {
+            color: $scolor-darkblack;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            top: 0;
+            @media (min-width:900px){
+                margin-left: 300px;
+                background: white !important;
+                
+            }
+            
+        }
+        &:nth-child(2) {
+            width: 100% !important;
+        }
+        /* :checked */
+        .tab-input:checked ~ .tab-content {
+            transition: all .3s ease;
+            max-height: 25em;
+            opacity: 1;
+            visibility: visible;
+            p {
+                padding: 30px;
+            }
+            &.tab-address{
+              max-height: 100%;
+              & .header-welcome{
+                border-bottom: 20px solid rgba($scolor-lightgray,.1); 
+                margin: 0;
+                padding: 20px 30px;
+                > .title{color:#999;@include fontSite(titles,1.8em,wregular);}
+              }
+              & .header-account{
+                > .title{color:#999;@include fontSite(titles,1.6em,wregular);}
+                > .subtitle{color:#999;@include fontSite(titles,1.2em,wregular);}
+              }
+              & .content-account{
+                display: flex;
+                justify-content: space-around;
+              }
+            }
+        }
+        .tab-input:checked ~  .label-tab {
+            background: $pcolor-pink !important;
+            color:white !important;
+            border: 0;
+        }
+        /* Icon */
+        label::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 3em;
+            height: 3em;
+            line-height: 3;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+        }
+        input[type=checkbox] + label::after {
+            content: "+";
+            @media (min-width:900px) {
+                color: white !important;
+            }
+        }
+        input[type=radio] + label::after {
+            content: "\25BC";
+            @media (min-width:900px) {
+                color: white !important;
+            }
+        }
+        input[type=checkbox]:checked + label::after {
+            transform: rotate(315deg);          
+        }
+        input[type=radio]:checked + label::after {
+            transform: rotateX(180deg);
+            @media (min-width:900px) {
+                transform: rotate(-90deg);
+            }
+        }
+    }  
+}
+.register-address{
+  width: 60%;
+  & .form-address{
+    > .form-field{
+      margin: 10px 10px 10px 0;
+    }
+    > .form-field .form-input{
+      border: 1px solid #999999;
+      color: #999999;
+    }
+    > .form-field:nth-child(1) ,
+    > .form-field:nth-child(2),
+    > .form-field:nth-child(6),
+    > .btn{
+      display: inline-block;
+    }
+    > .form-field:nth-child(1){
+      width: 61%;
+    }
+    > .form-field:nth-child(6){
+      margin-right: 38%;
+    }
+  }
+  & .title{
+    color: #999999;
+    @include fontSite(titles,1.2em,wregular);
+  }
+}
+.registered-address{
+  width: 30%;
+  & .address{
+    border: 1px solid #999999;
+    color: #999999;
+    margin: 10px 0;
+    padding: 10px 15px;
+    > .address-header{
+      border-bottom: 1px solid #999999;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      & .title{color:inherit;@include fontSite(titles,1.075em,wregular);}
+      & .address-option{margin: 0 5px;}
+    }
+    &.active{
+      color: $pcolor-lightpurple;
+      border: 1px solid $pcolor-lightpurple;
+    }
+    > .address-body{
+      margin: 10px 0;
+      > .title{color:inherit;@include fontSite(titles,1.2em,wregular);}
+      > .description{
+        margin: 2px 0;
+        padding: 0 !important;
+      }
+    }
+  }
+  & .title{
+    color: #999999;
+    @include fontSite(titles,1.2em,wregular);
+  }
+}
+.wrapper-account{
+    width: 100vw;
+    height: 900px;
+    background: rgba($scolor-lightgray,.1);
+  }
+.wrapper-header-account {
+    
+    display: block;
+    padding: 10px 0;
+    
+    @media (min-width:900px){
+        height: 100px;
+        margin-bottom: 20px;
+        padding: 20px 0;
+        background: linear-gradient(to left,rgba(152, 6, 110,.9),rgba(152, 6, 110,.9)  ,rgba(152, 6, 110,1) 75%),url(/images/backgrounds/footer-pattern.png);
+    }
+}
+.container-account{
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+    @media (min-width:900px){
+      max-width: 1300px;
+    }
+}
+.header-account {
+    @include fontSite(titles,1.125em,wsemibold);
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd; 
+}
+.content-account{
+    padding: 20px 30px 30px;
+    box-sizing: border-box;
+    
+    .tb-account {
+        display: table;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid#ddd;
+        border-radius: 3px;
+        .tb-account-cell {
+            display: table-cell;
+            text-align: left;
+            vertical-align: middle;
+            border-left: 1px solid#ddd;
+            @media (max-width: 600px) {
+                display: block;
+                width: 100%;
+            }
+            &:first-child{
+                border-left: 0;
+                .tb-title{
+                    border-left: 0;
+                }
+            }
+        }
+    }
+    .tb-title{
+        padding: 10px 15px;
+        background: #ddd;
+        border-left: 1px solid white;
+        @include fontSite(titles,1.1em,wsemibold);
+        margin: 0;
+        display: block;
+        width: 100%;
+        color: $pcolor-pink; 
+    }
+    .tb-content {
+        padding: 15px 20px;       
+        background: #fff;
+        p {
+            padding: 3px 0 !important;
+            margin: 0 !important;
+        }
+        h3 {
+            @include fontSite(titles,1.4em,wsemibold);
+        }
+        h4 {
+            @include fontSite(titles,1.1em,wsemibold);
+            padding: 5px 0 15px !important;
+        }
+    }
+
+    
+}

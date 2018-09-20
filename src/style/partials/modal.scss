@@ -1,0 +1,29 @@
+.modal-overlay{
+  background: rgba(0,0,0,0);
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: 4;
+  transition: background .8s ease-out;
+  &.active{
+    background: rgba(0,0,0,.7);
+    height: 100%;
+  }
+}
+.modal{
+  background: rgba(255,255,255,0);
+  border-radius: 12px;
+  position: fixed;
+  top: calc(50vh - 400px/2);
+  left: calc(50vw - 400px/2);
+  height: 400px;
+  width: 400px;
+  visibility: hidden;
+  z-index: 5;
+  transition: background .6s linear;
+  &.active{
+    background: rgba(255,255,255,1);
+    visibility: visible;
+  }
+}

@@ -1,0 +1,35 @@
+.footer{
+  background: linear-gradient(to right,rgba(152,6,110,.9) ,rgba(31,13,85,.9) 75%),url(/images/backgrounds/footer-pattern.png);
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  & .brand{
+    margin: 30px auto;
+    text-align: center;
+    svg{
+      width: 170px;
+      height: 60px;
+      fill: white;
+    }
+  }
+  & .social{
+    margin: 10px auto 0;
+    width: 280px;
+    text-align: center;
+    @include fontSite(txt,1em,wthin);
+    >.description_mini{margin: 0 0 60px;}
+    > .icons{
+      margin: 10px 0;
+    }
+    > span{
+      @include fontSite(txt,0.825em,wthin);
+    }
+  }
+  & .social-link{
+    margin: 0 18px;
+    > img{
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
