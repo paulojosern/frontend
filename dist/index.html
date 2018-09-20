@@ -18,8 +18,14 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script>
-        $(function() {
-            $(document).tooltip();
+        var nav = $('header');
+  
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 240) {
+            nav.addClass("fixed");
+            } else {
+            nav.removeClass("fixed");
+            }
         });
     </script>
 </body>
