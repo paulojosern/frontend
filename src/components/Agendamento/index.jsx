@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {  Row, Col, FormControl } from 'react-bootstrap'
-const URL = 'http://localhost:2000/servicos' || 'http://www.bfyme.com.br/servicos';
+const URL = 'https://api.myjson.com/bins/12e4l0/';
 
 export default class Agendamento extends Component {
     constructor(props) {
@@ -50,19 +50,21 @@ export default class Agendamento extends Component {
             ))
         };
     }
-    
 
     componentDidMount() {
         axios.get(URL)
             .then(res => {
                 const servicos = res.data;
-                this.setState({ servicos });
+                this.setState({ servicos })
+                //console.log(servicos)
             })
     }
     
     render () {
         return (
             <form className="schedule-form" onSubmit={this.handleSubmit}>
+                {this.state.servico}
+
                 <Row className="show-grid">
                     <Col xs={12} md={4}>
                         <FormControl
