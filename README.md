@@ -5,6 +5,7 @@ Instale os modulos
 
   - npm i 
   - npm start - para rodar na porta 8001
+  - npm run build - para produção
 
 
 Lembre-se:

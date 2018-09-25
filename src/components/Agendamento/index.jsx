@@ -3,50 +3,64 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {  Row, Col, FormControl } from 'react-bootstrap'
-const URL = 'https://api.myjson.com/bins/12e4l0/';
+
+const URL = 'https://api.myjson.com/bins/15r2r0';
 
 export default class Agendamento extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            value: '',
             servicos: [],
-            listaDias: ['1','3','4','5','6','7','11','12','13','14','17','18','21','22','25','26','29','30'],
-            listaHorarios: ['8h00','9h00','11h00','13h00','15h00','16h00','18h00'],
+            selectedService: null,
+            selectedDia: '',
+            selectedHora: '',
             newDia: '',
             newHr: ''
         };
 
-        this.handleChange= (e, prop) => {
+        this.handleChange = (e) => {
+            const value = parseInt(e.target.value)
+            const selectedService  = this.state.servicos.find(servico => servico.cd_servico === value)
+            this.setState({ selectedService }, () => this.renders())
+        };
+
+        this.handleChangeDH = (e, prop) => {
             this.setState({ [prop]: e.target.value })
-        }; 
+        };
+
+        this.renders = () => {  
+            const listDia = this.state.selectedService.dia || [];
+            const selectedDia = listDia.map( (dia, i) => (
+                <option key={i} value={dia}>{dia}</option>
+            ))
+
+            const listHora = this.state.selectedService.hora || [];
+            const selectedHora = listHora.map( (dia, i) => (
+                <option key={i} value={dia}>{dia}</option>
+            ))
+
+            this.setState({ 
+                selectedDia,
+                selectedHora
+            })
+        };
 
         this.handleSubmit = (e) => {
             e.preventDefault();
-            if(this.state.value && this.state.newDia && this.state.newHr) {
-                alert(`Confirma agendamento de ${this.state.value} para o dia ${this.state.newDia} às ${this.state.newHr}` )
+            if(this.state.selectedService.nm_servico && this.state.newDia && this.state.newHr){
+                alert(`Confirma agendamento de ${this.state.selectedService.nm_servico} para o dia ${this.state.newDia} às ${this.state.newHr}` )
             }
-            alert('Selecione todos os campos')
+            alert('SELECIONE TODOS OS CAMPOS')
         };
 
         this.renderServicos = () => {
             const list = this.state.servicos || [];
-            if(!this.state.servicos){
+            if(!list){
                 return <option>SEM SERVIÇOS</option>
             }
             return list.map(servico => (
-                <option key={servico.cd_servico} value={servico.nm_servico}>{servico.nm_servico}</option>
-            ))
-        };
-
-        this.renderHR = (select, tipo) => {
-            const list =  select || [];
-            if(!list){
-                return <option>INDISPONÍVEL</option>
-            }
-            return list.map(dias => (
-                <option key={dias} value={dias}>{tipo} {dias}</option>
+                <option key={servico.cd_servico} value={servico.cd_servico}>{servico.nm_servico}</option>
             ))
         };
     }
@@ -63,12 +77,10 @@ export default class Agendamento extends Component {
     render () {
         return (
             <form className="schedule-form" onSubmit={this.handleSubmit}>
-                {this.state.servico}
-
                 <Row className="show-grid">
                     <Col xs={12} md={4}>
                         <FormControl
-                            onChange={(e) => this.handleChange(e, 'value')}
+                            onChange={(e) => this.handleChange(e)}
                             componentClass="select" 
                             placeholder="select">
                             <option value="select">qual serviço desejado?</option>
@@ -77,20 +89,18 @@ export default class Agendamento extends Component {
                     </Col>
                     <Col xs={12} md={4}>
                         <FormControl
-                            onChange={(e) => this.handleChange(e, 'newDia')}
+                            onChange={(e) => this.handleChangeDH(e, 'newDia')}
                             componentClass="select" 
                             placeholder="select">
-                            <option value="select">Qual o dia?</option>
-                            {this.renderHR(this.state.listaDias, 'Dia')}
+                            {this.state.selectedDia ? this.state.selectedDia : <option value="select">Qual o dia?</option>}
                         </FormControl>
                     </Col>
                     <Col xs={12} md={4}>
                         <FormControl
-                            onChange={(e) => this.handleChange(e, 'newHr')}
+                            onChange={(e) => this.handleChangeDH(e, 'newHr')}
                             componentClass="select" 
                             placeholder="select">
-                            <option value="select">Qual o horário?</option>
-                            {this.renderHR(this.state.listaHorarios, "")}
+                            {this.state.selectedHora ? this.state.selectedHora : <option value="select">Qual o horário?</option>}
                         </FormControl>
                     </Col>
                 </Row>

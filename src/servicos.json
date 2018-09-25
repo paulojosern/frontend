@@ -3,6 +3,8 @@
     "cd_servico": 1,
     "cd_categoria": 1,
     "nm_servico": "MAQUIAGEM ARTISTICA",
+    "dia": ["1","3","4","5","6","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+    "hora": ["8h00","9h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Precisa de uma maquiagem para aquela festa a fantasia ou até para uma apresentação no teatro? A maquiagem artística é perfeita para essas ocasiões.",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 130
@@ -11,6 +13,8 @@
     "cd_servico": 2,
     "cd_categoria": 1,
     "nm_servico": "MAQUIAGEM",
+    "dia": ["1","2","3","5","6","7","11","12","13","14","17","20","21","22","23","26","29","30"],
+    "hora": ["7h00","9h00","11h00","14h00","15h00","16h00","18h00", "19:00"],
     "ds_servico": "Festas de casamento, formatura ou aquela ocasião especial pedem destaque para sua beleza e a maquiagem é uma ótima forma de completar o look.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 110
@@ -19,6 +23,8 @@
     "cd_servico": 3,
     "cd_categoria": 2,
     "nm_servico": "MANICURE",
+    "dia": ["1","3","4","5","6","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+    "hora": ["8h00","9h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "No serviço de manicure simples é realizado a limpeza das unhas e esmaltação.",
     "nr_duracao_maxima_servico": 30,
     "vl_servico": 25
@@ -27,6 +33,8 @@
     "cd_servico": 4,
     "cd_categoria": 2,
     "nm_servico": "PEDICURE",
+    "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+    "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Serviço oferece a limpeza das unhas e esmaltação",
     "nr_duracao_maxima_servico": 30,
     "vl_servico": 25
@@ -35,6 +43,8 @@
     "cd_servico": 5,
     "cd_categoria": 2,
     "nm_servico": "UNHAS DECORADAS",
+    "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+    "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "ds_servico": "Unhas postiças ou naturais ganham cor e formatos diferente com essa técnica",
     "nr_duracao_maxima_servico": 40,
     "vl_servico": 45
@@ -43,6 +53,8 @@
     "cd_servico": 6,
     "cd_categoria": 2,
     "nm_servico": "MANICURE E PEDICURE",
+        "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Serviço completo de limpeza e esmaltação de mãos e pés.",
     "nr_duracao_maxima_servico": 40,
     "vl_servico": 40
@@ -51,6 +63,8 @@
     "cd_servico": 7,
     "cd_categoria": 3,
     "nm_servico": "PENTEADOS",
+        "dia": ["1","4","7","11","12","13","21","22","25","26","29","30"],
+        "hora": ["9h00","8h30","9h00","12h00","13h00"],
     "ds_servico": "Penteados para todos os tipos de ocasiões podem ser solicitados.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 150
@@ -59,6 +73,8 @@
     "cd_servico": 8,
     "cd_categoria": 3,
     "nm_servico": "CORTE",
+        "dia": ["1","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Cortes simples para manutenção ou cortes mais elaborados",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 40
@@ -67,6 +83,8 @@
     "cd_servico": 9,
     "cd_categoria": 3,
     "nm_servico": "ESCOVA",
+        "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "ds_servico": "Para a modelagem, é utilizada a técnica que seca e modela o cabelo com ajuda do secador, conforme gosto do cliente.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 30
@@ -75,6 +93,8 @@
     "cd_servico": 10,
     "cd_categoria": 4,
     "nm_servico": "BAMBUTERAPIA",
+        "dia": ["1","2","3","5","6","7","11","12","13","14","17","20","21","22","23","26","29","30"],
+        "hora": ["7h00","9h00","11h00","14h00","15h00","16h00","18h00", "19:00"],
     "ds_servico": "Massagem que utiliza bambus para movimentos rigorosos e que promove relaxamento e contorno corporal",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 140
@@ -84,6 +104,8 @@
     "cd_categoria": 4,
     "nm_servico": "PEDRAS QUENTES",
     "ds_servico": "Massagem que proporciona relaxamento intenso, por meio de pedras vulcânicas aquecidas",
+        "dia": ["1","4","7","11","12","13","21","22","25","26","29","30"],
+        "hora": ["9h00","8h30","9h00","12h00","13h00"],
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 110
     },
@@ -91,6 +113,8 @@
     "cd_servico": 12,
     "cd_categoria": 4,
     "nm_servico": "RELAXANTE",
+        "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "A massagem relaxante é uma técnica que beneficia a flexibilidade e aumenta a circulação sanguínea do corpo, de modo que alivia o estresse e tensão muscular.",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 85
@@ -99,6 +123,8 @@
     "cd_servico": 13,
     "cd_categoria": 5,
     "nm_servico": "DESIGN DE SOBRANCELHA",
+        "dia": ["1","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Técnica que desenha e alinha harmoniosamente as sobrancelhas, seguindo o formato de rosto e gosto do cliente.",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 40
@@ -108,6 +134,8 @@
     "cd_categoria": 5,
     "nm_servico": "COLORAÇÃO DE SOBRANCELHA",
     "ds_servico": "Utilizada para realçar sobrancelhas que são mais claras, criando o aspecto de sobrancelha preenchida",
+        "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 45
     },
@@ -115,6 +143,8 @@
     "cd_servico": 15,
     "cd_categoria": 6,
     "nm_servico": "DRENAGEM LINFÁTICA",
+        "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Procedimento realizado para redução de inchaço corporal.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 80
@@ -123,6 +153,8 @@
     "cd_servico": 16,
     "cd_categoria": 6,
     "nm_servico": "TRATAMENTO DE CELULITE",
+        "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Procedimento pode reunir várias tecnologias e técnicas manuais para redução da aparência das celulites",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 220
@@ -131,6 +163,8 @@
     "cd_servico": 17,
     "cd_categoria": 6,
     "nm_servico": "GORDURA LOCALIZADA",
+        "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "ds_servico": "Voltado para redução de medidas, com produtos específicos e massagem rigorosa.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 200
@@ -139,6 +173,8 @@
     "cd_servico": 18,
     "cd_categoria": 7,
     "nm_servico": "LIMPEZA DE PELE",
+    "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+    "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "ds_servico": "Procedimento voltado para extração de cravos e melhora da aparência da pele do rosto.",
     "nr_duracao_maxima_servico": 45,
     "vl_servico": 85
@@ -147,6 +183,8 @@
     "cd_servico": 19,
     "cd_categoria": 7,
     "nm_servico": "PEELING",
+        "dia": ["2","3","4","11","12","13","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","9h00","13h00","18h00"],
     "ds_servico": "Por meio de uma leve descamação da pele, acontece a renovação celular da pele promovendo aspecto de saudável e limpa.",
     "nr_duracao_maxima_servico": 60,
     "vl_servico": 100
@@ -155,6 +193,8 @@
     "cd_servico": 20,
     "cd_categoria": 7,
     "nm_servico": "HIDRATAÇÃO FACIAL",
+        "dia": ["2","3","4","5","8","7","11","12","13","14","17","18","21","22","25","26","29","30"],
+        "hora": ["7h00","8h00","11h00","13h00","15h00","16h00","18h00"],
     "ds_servico": "Para melhorar a textura e retenção de líquido da pele.",
     "nr_duracao_maxima_servico": 30,
     "vl_servico": 75
