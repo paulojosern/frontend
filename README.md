@@ -15,8 +15,8 @@
 
 ### Integrantes Bfy.me
 
-Paulo José R Nunes - Rm78695
-Gabriela Gomes
-Gabriela
-Henrique
-Joana Durvalo
+- Gabriela Gomes Vieira - RM79087
+- Gabriela Lima Vaz - RM77914
+- Henrique de Paula - RM77968
+- Joana Euvira Carbonieri Durvalo - RM77739
+- Paulo José Reis Nunes - RM78695

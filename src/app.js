@@ -103,8 +103,8 @@ export default class App extends Component {
                                 selectedHora={this.state.selectedHora}
                                 newDia={this.state.newDia}
                                 newHr={this.state.newHr}
-                                LoadOptionServices={this.LoadOptionServices}
-                                LoadOption={this.LoadOption}
+                                loadOptionServices={this.loadOptionServices}
+                                loadOption={this.loadOption}
                                 renders={this.renders}
                                 renderServices={this.renderServices}
                                 handleSubmit={this.handleSubmit}
