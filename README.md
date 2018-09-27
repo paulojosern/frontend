@@ -1,13 +1,22 @@
-# FrontEnd Bfyme
+# PROJETO AM
+
+## Bfy.me - FrontEnd React App
 
 ### Instalação
-Instale os modulos
 
-  - npm i 
-  - npm start - para rodar na porta 8001
-  - npm run build - para produção
+1. Baixe ou clone a pasta do projeto
+
+2. No terminal:
+
+  - npm install ( Instala todos as dependencias no package.json )
+  - npm start ( Configurado no webpack para abrir um server de desenvolvimento na porta :8001 )
+  - npm run build ( Geração dos arquivos separados para produção )
 
 
-Lembre-se:
-  - Subir na raiz do bfyme o "servicos.json"
-  - API - http://www.bfyme.com.br/servicos.json"
+### Integrantes Bfy.me
+
+Paulo José R Nunes - Rm78695
+Gabriela Gomes
+Gabriela
+Henrique
+Joana Durvalo

@@ -15,80 +15,51 @@
     }
   }
 }
+
 .card-faq{
-  border: 1px solid $scolor-darkgray;
-  max-height: 80px;
-  margin: 35px auto;
-  padding: 10px 20px;
-  overflow: hidden;
-  transition: max-height .4s ease-in;
-  &.active{
-    max-height: 1200px;
-    overflow: inherit;
-    > .card-details{
-      opacity: 1;
-    }
-  }
-  > .card-head{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    > .title{
-      color: $scolor-darkgray;
-      @include fontSite(titles,1.6em,wregular);
-    }
-    > .btn-plus{
-      border: 2px solid $scolor-darkgray;
-      border-radius: 25px;
-      padding: 0 10px;
-      @include fontSite(titles,1.6em,wregular);
-    }
-  }
-  > .card-details{
-    opacity: 0;
-    margin: 40px auto;
-    transition: opacity .2s ease-out;
-    transition-delay: .4s;
-    > .text{
-      color: $scolor-darkgray;
-      @include fontSite(txt,1.2em,wlight);
-    }
-  }
-}
-.warn-quest{
-  > .title{
-    color: #999;
-    @include fontSite(titles,2.6em,wregular);
-    text-align: center;
-  }
-  > .btn{
-    margin: 20px auto;
-  }
-}
-.modal-faq{
-  height: auto;
-  padding: 16px;
-  top: 18% !important;
-}
-.form-faq{
-  > .title{color:$pcolor-lightpurple;padding:0 0 10px;@include fontSite(titles,1.2em,wregular);}
-  > .form-field{
-    margin: 10px 0;
+    border: 1px solid $scolor-darkgray;
+    margin: 30px auto;
+    padding: 0 20px 10px 20px;
+    overflow: hidden;
+    transition: max-height .3s ease-in;
+    color: $scolor-darkgray;
+    border-radius: 6px;
     position: relative;
-    > label{display: block;color:$pcolor-pink;margin:0;}
-    > input{
-      border: none;
-      border-bottom: 1px solid #999;
-      padding: 6px 0;
+    display: block;
+    .card-head{
+        padding: 20px 0 10px;
+        display: block;
+        color: $scolor-darkgray;
+        @include fontSite(titles,1.3em,wsemibold);
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+        background: white;
+        z-index: 5;
+        .card-resp{
+            position: absolute;
+            padding: 10px 0;
+            @include fontSite(txt,1.1em,wlight);
+            transition: all .2s ease-in;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+        }
+
     }
-    > .error{color: #ccc;position: absolute;top: 0;right: 0;display: none;}
-    .message-faq{
-      border: 1px solid #999;
-      height: 160px;
-      margin-top: 6px;
-      resize: none;
-      width: 100%;
+    .openCard {
+        
+        .card-resp {
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            display: block;
+        }
+        
     }
-  }
+    
+
 }
+

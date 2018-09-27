@@ -1,22 +1,38 @@
 'use strict'
 
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import Menu from './Menu'
 
-const Header = () => (
-    <header>
-        <div className="container-header">
-            <Menu />
-            <a className="btn btn-login" href="login.html">Entrar</a>
-            <a className="brand" href="index.html">
-                <svg>
-                    <use xlinkHref="images/icons.svg#logo" title="A sua beleza a toda hora"></use>
-                </svg>
-            </a>
-            <input type="checkbox" id="label-login" name="login"/>
-            <label className="label-login" htmlFor="label-login"><span className="icon-hamburguer"></span></label>
-        </div>
-    </header>
-)
+const Header = () => {
+    const openMenu = () => {
+        let link = document.querySelector('nav');
+        let hamburger = document.querySelector('.icon-hamburguer');
+        
+        if (link.classList.contains("open")) {
+            link.classList.remove("open");
+            hamburger.classList.remove("icon-hover")
+        } else {
+            link.classList.add("open");
+            hamburger.classList.add("icon-hover")
+        }
+    }
+
+    return (
+        <header>
+            <div className="container-header">
+                <Menu  />
+                <NavLink to="/login" className="btn btn-login" >Entrar</NavLink>
+                <NavLink to="/" className="brand">
+                    <svg>
+                        <use xlinkHref="images/icons.svg#logo" title="A sua beleza a toda hora"></use>
+                    </svg>
+                </NavLink>
+                <button onClick={openMenu} 
+                className="label-login"><span className="icon-hamburguer"></span></button>
+            </div>
+        </header>
+    )
+}
 
 export default Header

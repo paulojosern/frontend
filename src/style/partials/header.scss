@@ -179,23 +179,17 @@ header {
         /////////////////////////////////// MENU (PÚBLICO)
         input#label-login{
             display: none;
-            &:checked ~ .menu {
+            &:checked + nav.menu {
                 opacity: 1;
                 visibility: visible;
-                z-index: 5;
+                z-index: 999;
             }
-            &:checked ~ .label-login{       
-                .icon-hamburguer{
-                    background: rgba(255,255,255,0);
-                    &:before{transform: rotate(45deg);top: 0;}
-                    &:after{transform: rotate(135deg);top: 0;}
-                }
-            }
+
             &:checked ~ .label-menu-account{
                 display: none;
             }
         }
-        nav.menu{
+        .menu{
             z-index: 1;
             position: fixed;
             top: 0;
@@ -219,7 +213,7 @@ header {
                 height: 100%; 
                 background: transparent;
             }
-            ul.menu-navegation{
+            .menu-navegation{
                 @include centerv();
                 width: 100%;
                 left: 0;
@@ -228,7 +222,7 @@ header {
                     height: auto;
                     display: block;
                 }
-                li.item {
+                .item {
                     padding: 10px 30px;
                     display: block;
                     height: auto;
@@ -250,43 +244,57 @@ header {
                         position: relative;   
                         @media (min-width:900px) {
                             @include fontSite(titles,1em,wregular); 
+                        }    
+                    }
+                    .icon-arrow{
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 12px;
+                        position: relative;
+                        margin-left: 8px;
+                        &:after , &:before{
+                            background: white;
+                            border-radius: 6px;
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            top: -2px;
+                            height: 1.5px;
+                            width: 8px;
+                            transition: top .5s;
+                            transition: transform .5s;
+                            transform: rotate(-45deg);
+                        }    
+                        &:before {
+                            transform: rotate(45deg);
+                            right: 5px;
                         }
+                    }  
+                    &:hover {
                         .icon-arrow{
-                            display: inline-block;
-                            vertical-align: middle;
-                            width: 12px;
-                            position: relative;
-                            margin-left: 8px;
-                            &:after , &:before{
-                                background: white;
-                                border-radius: 6px;
-                                content: '';
-                                position: absolute;
-                                right: 0;
-                                top: -2px;
-                                height: 1.5px;
-                                width: 8px;
-                                transition: top .5s;
-                                transition: transform .5s;
-                                transform: rotate(-45deg);
-                            }    
-                            &:before {
-                                transform: rotate(45deg);
-                                right: 5px;
-                            }
-                        }      
+                            transition: all .2s ease-out;
+                            top: -2px; 
+                            transform: rotate(180deg);                           
+                        } 
                     }
                     
                 }
-                ///////////////////////////// SUBMENU
+                ///////////////////////////// SUBMENU /
                 .servicos{
                     cursor: pointer;
-                    #dropdown {                       
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: all .1s ease-out;
+                    ul {                       
                         height: 0;
-                        a.menu-link-dropdown{
+                        visibility: hidden;
+                        opacity: 0;
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        background: white;
+                        padding:0;
+                        width: 100%;
+                        padding: 30px;
+                        text-align: center;
+                        .menu-link-dropdown{
                           color:  white;
                           display: block;
                           svg {
@@ -298,13 +306,8 @@ header {
                           }
                         }
                         @media (min-width:900px) {
-                            position: absolute;
-                            left: 0;
-                            top: 25px;
-                            text-align: center;
-                            padding: 20px; 
 
-                            a.menu-link-dropdown{
+                            .menu-link-dropdown{
                                 color: $pcolor-pink;
                                 display: inline-block;
                                 border-radius: 0; 
@@ -317,28 +320,34 @@ header {
                         }
                     }                   
                     &:hover{
-                        #dropdown { 
-                            opacity: 1;
-                            visibility: visible;
-                            transition: all .2s ease-in;   
+                        ul { 
                             height: auto;
-                        }                     
-                        @media (min-width:900px) { 
-                            #dropdown{
-                                background:white;                                
-                                top: 45px;
-                                box-shadow: 0px 4px 5px rgba(#000, .1);
+                            visibility: visible;
+                            opacity: 1;
+                            top:100%;
+                            @media (min-width:900px) { 
+
+                                
                             }
-                            .icon-arrow{
-                                transition: all .2s ease-out;
-                                top: -2px; 
-                                transform: rotate(180deg);                           
-                            }
-                        }
+                        }                       
                     }
                 }    
             }
         }
+        @media (max-width:900px) {
+            .open {
+                opacity: 1;
+                visibility: visible;
+                z-index: 5;
+            }
+            .icon-hover{
+                background: rgba(255,255,255,0) !important;
+                &:before{transform: rotate(45deg); top:  0 !important;}
+                &:after{transform: rotate(135deg);top:  0 !important;}
+            }
+        }
+        
+        
         //icon
         .label-login{
             height: 30px;

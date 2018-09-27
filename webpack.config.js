@@ -20,9 +20,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query:{
-            presets:[
-                '@babel/react'
-            ]
+            presets:[ '@babel/preset-react']
         }
       },
       {
@@ -52,8 +50,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "style.css"
     })
   ],

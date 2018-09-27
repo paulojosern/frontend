@@ -8,13 +8,30 @@ import SliderServices from '../components/SliderServices'
 import Depoimentos from '../components/depoimentos'
 import Footer from '../components/footer'
 
-export default props => (
-    <div>
-      <Header />
-      <Banner />
-      <Works />
-      <SliderServices />
-      <Depoimentos />
-      <Footer />
-    </div>
-)
+const Main = ({ 
+		selectedDia, 
+		selectedHora, 
+		loadOptionServices,
+		loadOption,
+		renderServices,
+		handleSubmit 
+	}) => (
+		<div>
+			<Header />
+			<Banner 
+				selectedDia={selectedDia}
+				selectedHora={selectedHora}
+				loadOptionServices={loadOptionServices}
+				loadOption={loadOption}
+				renderServices={renderServices}
+				handleSubmit={handleSubmit}
+			/>
+			<Works />
+			<SliderServices />
+			<Depoimentos />
+			<Footer />  
+		</div>
+	)
+
+export default Main
+
